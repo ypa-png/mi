@@ -1,0 +1,159 @@
+*{
+	margin: 0;
+	padding: 0;
+	/* 当内容大小固定，用contet-box
+	 当希望整个盒子大小固定，不会因为设置了内边距和边框而撑开改变大小
+	 */
+	box-sizing: border-box;
+}
+.header{
+	width:375px;
+	height: 74px;
+	background: #f2f2f2;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+body{
+	background: #f2f2f2;
+}
+.headertop{
+	width: 375px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	position: relative;
+	z-index: 100;
+	background: #f2f2f2;
+}
+.logo{
+	width: 50px;
+	height: 44px;
+	background-image: url(../img/iconfinder_Social-37_3681305.svg);
+	background-size: 25px auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.user{
+	width: 50px;
+	height: 44px;
+	background-image: url(../img/iconfinder_profile_3018530.svg);
+	background-size: 25px auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.search{
+	flex: 1;
+	height: 30px;
+	border: 1px solid #e5e5e5;
+	display: flex;
+	background: #fff;
+	border-radius: 2px;
+}
+.search .icon{
+	width: 31px;
+	height: 31px;
+	background-image: url(../img/search.png);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: center;
+	position: relative;
+	z-index: 100;
+}
+.search input{
+	background: transparent;
+	border: none;
+	outline: none;
+	width: 95%;
+	
+}
+.header .headerNav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 5px 0 10px #ccc;
+}
+.header .headerNav a{
+	text-decoration: none;
+	color: #9a9a9a;
+	font-size: 15px;
+	align-self: stretch;
+	padding-bottom: 9px;
+	
+}
+.header .headerNav a.active{
+	color: #4acacc;
+	border-bottom: 2px solid #4acacc;
+}
+.header .headerNav .xiahua{
+	width: 20px;
+	height: 20px;
+	background-image: url(../img/iconfinder_angle-down-arrow-direction-bottom_3209391.svg);
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
+	background-position:center center;
+	z-index: 100;
+	transition: transform 0.2s;
+}
+#dropdown:checked~.dropdownbox{
+	height: 100vh;
+}
+#dropdown:checked~.dropdownbox .dmain{
+	height: 130px;
+}
+#dropdown:checked~.xiahua{
+	transform: rotate(180deg);
+}
+.dropdownbox{
+	width: 100vw;
+	/* height: 100vh; */
+	background: rgba(0,0,0,0.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	height: 0vh;
+	overflow: hidden;
+}
+.dropdownbox .dmain{
+	position: absolute;
+	left: 0;
+	top: 44px;
+	width: 375px;
+	height: 0px;
+	display: flex;
+	flex-direction: column;
+	background: #f2f2f2;
+	transition: height 0.2s;
+	overflow: hidden;
+}
+.dropdownbox .dmain .dtop{
+	height: 30px;
+	width: 375px;
+	font-size: 10px;
+	display: flex;
+	align-items: flex-end;
+	padding-left: 11px;
+}
+.dropdownbox .dmain .dlist{
+	flex: 1;
+	flex-wrap: wrap;
+	display: flex;
+	padding-left: 10px;
+	align-content: space-evenly;
+}
+.dropdownbox .dmain .dlist a{
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #d9d9d9;
+	border-radius: 5px;
+	margin: 0 10.5px 10px 0;
+	font-size: 14px;
+	text-decoration: none;
+	color: #3c3c3c;
+	background: #ffffff;
+}
